@@ -4,6 +4,7 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
+import "tailwindcss/tailwind.css";
 
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
@@ -19,7 +20,7 @@ const rows = [
 
 export default function BasicTable() {
   return (
-    <TableContainer className="">
+    <TableContainer>
       <Table sx={{ minWidth: 50 }} aria-label="simple table">
         <TableHead>
           <TableRow className=" bg-gray-100">

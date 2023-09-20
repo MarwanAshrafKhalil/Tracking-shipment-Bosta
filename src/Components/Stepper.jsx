@@ -3,14 +3,16 @@ import { styled } from "@mui/material/styles";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
+
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import InventoryIcon from "@mui/icons-material/Inventory";
 import AddBusinessIcon from "@mui/icons-material/AddBusiness";
 import NoCrashIcon from "@mui/icons-material/NoCrash";
+import CheckIcon from "@mui/icons-material/Check";
+
 import StepConnector, {
   stepConnectorClasses,
 } from "@mui/material/StepConnector";
-import CheckIcon from "@mui/icons-material/Check";
 import { useState } from "react";
 
 const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
@@ -109,10 +111,8 @@ ColorlibStepIcon.propTypes = {
 };
 
 export default function CustomizedSteppers() {
-  const [currentStatus, setCurrentStatus] = useState(); // maximum 3
-  const handleStatusChange = (statusIndex) => {
-    setCurrentStatus(statusIndex);
-  };
+  const [currentStatus, setCurrentStatus] = useState(2); // maximum 3
+  // todo:
 
   const steps = [
     "Order Created",
@@ -127,12 +127,9 @@ export default function CustomizedSteppers() {
       activeStep={currentStatus}
       connector={<ColorlibConnector />}
     >
-      {steps.map((label, index) => (
+      {steps.map((label) => (
         <Step key={label}>
-          <StepLabel
-            StepIconComponent={ColorlibStepIcon}
-            onClick={() => handleStatusChange(index)}
-          >
+          <StepLabel StepIconComponent={ColorlibStepIcon}>
             <div className="font-bold text-grayish">{label}</div>
           </StepLabel>
         </Step>
