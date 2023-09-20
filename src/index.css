@@ -21,7 +21,7 @@
 }
 
 .container {
-  @apply flex justify-center   h-screen;
+  @apply flex justify-center;
 }
 
 .grid-container {
@@ -36,4 +36,11 @@
 
 .grid-item {
   @apply bg-white border border-gray-200 rounded-lg p-4;
+}
+
+.span-title {
+  @apply text-grayish font-medium;
+}
+.span-data {
+  @apply font-semibold text-black text-lg;
 }

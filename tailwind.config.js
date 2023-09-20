@@ -11,7 +11,7 @@ export default {
       },
     },
     fontFamily: {
-      sans: ["Cairo", "sans-serif", ...defaultTheme.fontFamily.sans],
+      sans: ["Cairo", ...defaultTheme.fontFamily.sans],
     },
   },
   plugins: [],

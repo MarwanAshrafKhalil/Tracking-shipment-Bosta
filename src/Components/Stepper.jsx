@@ -64,6 +64,7 @@ function ColorlibStepIcon(props) {
     1: <SettingsIcon />,
     2: <GroupAddIcon />,
     3: <VideoLabelIcon />,
+    4: <VideoLabelIcon />,
   };
 
   return (
@@ -95,9 +96,10 @@ ColorlibStepIcon.propTypes = {
 };
 
 const steps = [
-  "Select campaign settings",
-  "Create an ad group",
-  "Create an ad",
+  "Order Created",
+  "Shipment received from vendor",
+  "Out for delivery",
+  "Order delivered",
 ];
 
 export default function CustomizedSteppers() {
