@@ -15,20 +15,20 @@ import StepConnector, {
 } from "@mui/material/StepConnector";
 import { useState } from "react";
 
-const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
+const ColorlibConnector = styled(StepConnector)(({ theme, color }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
     top: 22,
   },
   [`&.${stepConnectorClasses.active}`]: {
     [`& .${stepConnectorClasses.line}`]: {
       backgroundImage: "none",
-      backgroundColor: " #e30613",
+      backgroundColor: "#e30613",
     },
   },
   [`&.${stepConnectorClasses.completed}`]: {
     [`& .${stepConnectorClasses.line}`]: {
       backgroundImage: "none",
-      backgroundColor: " #e30613",
+      backgroundColor: "#e30613",
     },
   },
   [`& .${stepConnectorClasses.line}`]: {
@@ -111,8 +111,10 @@ ColorlibStepIcon.propTypes = {
 };
 
 export default function CustomizedSteppers() {
-  const [currentStatus, setCurrentStatus] = useState(2); // maximum 3
+  const currentStatus = 2; // maximum 3
   // todo:
+
+  // const color = "#84cc16";
 
   const steps = [
     "Order Created",
@@ -130,7 +132,7 @@ export default function CustomizedSteppers() {
       {steps.map((label) => (
         <Step key={label}>
           <StepLabel StepIconComponent={ColorlibStepIcon}>
-            <div className="font-bold text-grayish">{label}</div>
+            <div className=" mt-8 font-bold text-grayish">{label}</div>
           </StepLabel>
         </Step>
       ))}

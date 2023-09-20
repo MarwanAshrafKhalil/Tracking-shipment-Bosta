@@ -1,8 +1,27 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+
 import { Outlet } from "react-router-dom";
+// import { fetchUsers } from "../Redux/features/users/userSlice";
+// import { UserView } from "../Redux/features/users/UserView";
 
 const Navbar = () => {
+  const dispatch = useDispatch();
+
   const [open, setOpen] = useState(false);
+  const [trackID, setTrackID] = useState("");
+  // const [searchTrackID, setSearchTrackID] = useState(false);
+
+  function updateTrackID(ID) {
+    setTrackID(ID);
+
+    console.log(ID);
+  }
+
+  // async function searchID() {
+  //   console.log("trtr: ", trackID);
+  //   await dispatch(tracking(trackID));
+  // }
 
   return (
     <>
@@ -48,11 +67,16 @@ const Navbar = () => {
                     <div className="flex  content-center mt-5">
                       <input
                         type="text"
+                        placeholder="Enter the Shipment ID"
+                        value={trackID}
+                        onChange={(ev) => updateTrackID(ev.target.value)}
                         className="border w-60 border-grayish  rounded-l-lg py-1 "
                       />
-                      <button className=" bg-bosta w-14 h-14 items-center text-white rounded-r-xl">
+                      <button
+                        // onClick={() => searchID()}
+                        className=" bg-bosta w-14 h-14 items-center text-white rounded-r-xl"
+                      >
                         <a href={`/brief`}>
-                          {" "}
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
