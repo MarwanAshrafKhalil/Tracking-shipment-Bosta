@@ -1,6 +1,7 @@
 // import React from "react";
 
 import CustomizedSteppers from "./Components/Stepper";
+import Table from "./Components/Table";
 
 const briefUpdate = () => {
   return (
@@ -30,8 +31,12 @@ const briefUpdate = () => {
             <CustomizedSteppers />
           </div>
         </div>
-        <div className="grid-item">Second Div</div>
-        <div className="grid-item">Third Div</div>
+        <div className="grid-item-table">
+          <div className="h-full w-full ">
+            <Table />
+          </div>
+        </div>
+        <div className="grid-item-data">Third Div</div>
       </div>
     </div>
   );

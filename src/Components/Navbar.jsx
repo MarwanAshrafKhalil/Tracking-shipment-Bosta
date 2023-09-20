@@ -3,9 +3,7 @@ import { Outlet } from "react-router-dom";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  function printTrack() {
-    console.log({ open });
-  }
+
   return (
     <>
       <div className=" flex justify-between top-0 items-center pt-10 pr-70 pb-16 pl-70 ">
@@ -53,20 +51,23 @@ const Navbar = () => {
                         className="border w-60 border-grayish  rounded-l-lg py-1 "
                       />
                       <button className=" bg-bosta w-14 h-14 items-center text-white rounded-r-xl">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          strokeWidth={1}
-                          stroke="currentColor"
-                          className="ml-2 w-9 h-9"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-                          />
-                        </svg>
+                        <a href={`/brief`}>
+                          {" "}
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth={1}
+                            stroke="currentColor"
+                            className="ml-2 w-9 h-9"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                            />
+                          </svg>
+                        </a>
                       </button>
                     </div>
                   </div>

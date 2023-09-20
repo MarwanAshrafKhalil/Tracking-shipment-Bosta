@@ -25,16 +25,19 @@
 }
 
 .grid-container {
-  @apply grid grid-cols-2 gap-4;
-  max-width: 900px;
+  @apply grid grid-cols-3 gap-4;
+  max-width: 1200px;
   width: 100%;
 }
 
 .grid-item-top {
-  @apply col-span-2 bg-white border border-gray-200 p-4 rounded-lg items-center;
+  @apply col-span-3 bg-white border border-gray-200 p-4 rounded-lg items-center;
 }
 
-.grid-item {
+.grid-item-table {
+  @apply bg-white border col-span-2 border-gray-200 rounded-lg;
+}
+.grid-item-data {
   @apply bg-white border border-gray-200 rounded-lg p-4;
 }
 
