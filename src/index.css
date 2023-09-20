@@ -19,3 +19,21 @@
   justify-content: center;
   width: 100%;
 }
+
+.container {
+  @apply flex justify-center   h-screen;
+}
+
+.grid-container {
+  @apply grid grid-cols-2 gap-4;
+  max-width: 900px;
+  width: 100%;
+}
+
+.grid-item-top {
+  @apply col-span-2 bg-white border border-gray-200 p-4 rounded-lg items-center;
+}
+
+.grid-item {
+  @apply bg-white border border-gray-200 rounded-lg p-4;
+}

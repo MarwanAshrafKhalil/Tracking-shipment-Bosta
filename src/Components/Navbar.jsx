@@ -37,13 +37,10 @@ const Navbar = () => {
               className="relative p-4  text-bosta"
             >
               Track Shipment
-              {/* REMOVE */}
-              {printTrack()}
               <ul
-                // ${
-                //   open ? "block" : "hidden"
-                // }
-                className={` absolute  py-2 mt-2 w-50 h-44  rounded-lg shadow-xl block  `}
+                className={` absolute  py-2 mt-2 w-50 h-44  rounded-lg shadow-xl ${
+                  open ? "block" : "hidden"
+                }  `}
               >
                 <li className="flex px-12 py-5">
                   <div className=" flex  flex-col">
