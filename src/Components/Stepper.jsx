@@ -15,7 +15,7 @@ import StepConnector, {
 } from "@mui/material/StepConnector";
 import { useState } from "react";
 
-const ColorlibConnector = styled(StepConnector)(({ theme, color }) => ({
+const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
     top: 22,
   },
@@ -111,6 +111,7 @@ ColorlibStepIcon.propTypes = {
 };
 
 export default function CustomizedSteppers() {
+  const 
   const currentStatus = 2; // maximum 3
   // todo:
 

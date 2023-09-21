@@ -39,7 +39,7 @@ const Details = () => {
       )
     );
   }
-  rows = rows.filter((row) => row.Location !== "");
+  //   rows = rows.filter((row) => row.Location !== "");
   //   console.log(rows);
 
   return (

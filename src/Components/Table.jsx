@@ -6,7 +6,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import "tailwindcss/tailwind.css";
 
-export default function BasicTable({ rows }) {
+export default function BasicTable({ rows, ...props }) {
   return (
     <TableContainer>
       <Table sx={{ minWidth: 50 }} aria-label="simple table">
@@ -37,9 +37,9 @@ export default function BasicTable({ rows }) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {rows.map((row, index) => (
             <TableRow
-              key={row.name}
+              key={index}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
               <TableCell component="th" scope="row">

@@ -4,17 +4,20 @@ import { useDispatch, useSelector } from "react-redux";
 import DetailsTable from "./DetailsTable";
 import CustomizedSteppers from "./Components/Stepper";
 import { fetchUsers } from "./Redux/features/users/userSlice";
+import { useParams } from "react-router-dom";
 
 const BriefUpdate = () => {
   // console.log("user: ", user);
   const dispatch = useDispatch();
+  const { trackID } = useParams();
+  console.log(trackID);
 
   useEffect(() => {
-    dispatch(fetchUsers("67151313"));
-  }, []);
+    if (trackID) dispatch(fetchUsers(trackID));
+  }, [trackID]);
 
-  const user = useSelector((state) => state.user);
-  console.log("opop: ", user);
+  const { users } = useSelector((state) => state.user);
+  // console.log("opop: ", user);
 
   function dateRefactor(x) {
     const date = new Date(x);
@@ -40,11 +43,7 @@ const BriefUpdate = () => {
   }
 
   function getMonthFromDate(dateString) {
-    if (
-      user.users &&
-      user.users.CurrentStatus &&
-      user.users.CurrentStatus.timestamp
-    ) {
+    if (users && users.CurrentStatus && users.CurrentStatus.timestamp) {
       const date = new Date(dateString);
       const options = { day: "numeric", month: "long", year: "numeric" };
       return date.toLocaleDateString("en-US", options);
@@ -54,11 +53,7 @@ const BriefUpdate = () => {
   }
 
   function lastUpdateRefactor(timex) {
-    if (
-      user.users &&
-      user.users.CurrentStatus &&
-      user.users.CurrentStatus.timestamp
-    ) {
+    if (users && users.CurrentStatus && users.CurrentStatus.timestamp) {
       const rawDate = timex.split("T");
 
       const date = dateRefactor(rawDate[0]);
@@ -77,37 +72,34 @@ const BriefUpdate = () => {
             <div className=" flex flex-col">
               <span className=" span-title">Shipment ID - {"13737343"}</span>
               <span className=" span-data">
-                {user.users.CurrentStatus &&
-                  user.users.CurrentStatus.state.split("_")[0]}
+                {users.CurrentStatus && users.CurrentStatus.state.split("_")[0]}
               </span>
             </div>
             <div className=" flex flex-col">
               <span className="span-title"> Last Update</span>
               <span className=" span-data">
-                {user.users &&
-                  user.users.CurrentStatus &&
-                  user.users.CurrentStatus.timestamp &&
-                  lastUpdateRefactor(user.users.CurrentStatus.timestamp)}
+                {users &&
+                  users.CurrentStatus &&
+                  users.CurrentStatus.timestamp &&
+                  lastUpdateRefactor(users.CurrentStatus.timestamp)}
               </span>
             </div>
             <div className=" flex flex-col">
               <span className="span-title">Vendor</span>
-              <span className=" span-data">
-                {user.users && user.users.provider}
-              </span>
+              <span className=" span-data">{users && users.provider}</span>
             </div>
             <div className=" flex flex-col">
               <span className="span-title">Delivery Date</span>
               <span className=" span-data">
-                {user.users &&
-                  user.users.PromisedDate &&
-                  getMonthFromDate(user.users.PromisedDate.split("T")[0])}
+                {users &&
+                  users.PromisedDate &&
+                  getMonthFromDate(users.PromisedDate.split("T")[0])}
               </span>
             </div>
           </div>
           <hr className="mb-10" />
           <div className="mb-0">
-            <CustomizedSteppers status="delivered" />
+            <CustomizedSteppers status={users?.CurrentStatus?.state} />
           </div>
         </div>
         <div className="grid-item-table">
