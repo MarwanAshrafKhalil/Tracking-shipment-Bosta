@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Homepage from "./Homepage";
-import BriefUpdate from "./BriefUpdate";
 import i18next from "i18next";
 import { useEffect, useState } from "react";
+import BriefPage from "./BreifPage";
 
 function App() {
   const [currentLanguage, setCurrentLanguage] = useState(i18next.language);
@@ -27,7 +27,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />}></Route>
 
-          <Route path="/Brief/:trackID" element={<BriefUpdate />} />
+          <Route path="/Brief/:trackID" element={<BriefPage />} />
         </Routes>
       </BrowserRouter>
     </div>

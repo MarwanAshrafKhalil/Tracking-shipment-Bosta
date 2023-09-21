@@ -8,7 +8,7 @@ import { useParams } from "react-router-dom";
 import ShipmentInfo from "./Components/ShipmentInfo";
 // import { useTranslation } from "react-i18next";
 
-const BriefUpdate = () => {
+const BriefPage = () => {
   // const [t, i18n] = useTranslation();
 
   const dispatch = useDispatch();
@@ -52,4 +52,4 @@ const BriefUpdate = () => {
     </div>
   );
 };
-export default BriefUpdate;
+export default BriefPage;
