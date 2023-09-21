@@ -13,7 +13,8 @@ import CheckIcon from "@mui/icons-material/Check";
 import StepConnector, {
   stepConnectorClasses,
 } from "@mui/material/StepConnector";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import i18next from "i18next";
 
 const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -38,8 +39,8 @@ const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
       theme.palette.mode === "dark" ? theme.palette.grey[800] : "#eaeaf0",
     borderRadius: 1,
     width: "120%",
-    marginLeft: "-10%",
-    marginRight: "-10%",
+    marginLeft: i18next.language === "en" ? "-10%" : "-130%",
+    marginRight: i18next.language === "en" ? "-10%" : "-130%",
   },
 }));
 
@@ -73,7 +74,6 @@ const ColorlibStepIconRoot = styled("div")(({ theme, ownerState }) => {
 
 function ColorlibStepIcon(props) {
   const { active, completed, className } = props;
-  console.log({ active, completed, className });
 
   const icons = {
     1: <InventoryIcon />,

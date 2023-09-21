@@ -14,12 +14,9 @@ const initialState = {
 };
 
 export const fetchUsers = createAsyncThunk("user/fetchUsers", (trackID) => {
-  console.log("trackID:", trackID);
-
   return axios
     .get(`https://tracking.bosta.co/shipments/track/${trackID}`)
     .then((response) => {
-      //redirect page
       return response.data;
     });
 });

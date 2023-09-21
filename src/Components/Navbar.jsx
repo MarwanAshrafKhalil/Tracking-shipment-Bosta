@@ -2,8 +2,6 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router-dom";
 
-// import { UserView } from "../Redux/features/users/UserView";
-
 const Navbar = () => {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
@@ -26,16 +24,16 @@ const Navbar = () => {
 
   return (
     <>
-      <div className=" flex justify-between top-0 items-center pt-10 pr-70 pb-16 pl-70 ">
+      <div className=" flex justify-between top-0 items-center pt-10 pe-70 pb-16 ps-70 ">
         <Link to="/">
           <img
-            className="object-contain h-10 ml-20"
+            className="object-contain h-10 ms-20"
             src="https://lever-client-logos.s3.us-west-2.amazonaws.com/4a536633-277c-4c83-afa7-586bfcce7dd0-1636574104926.png"
             alt=""
           />
         </Link>
 
-        <div className="mr-40 font-bold lg:block md:hidden sm: hidden">
+        <div className="me-40 font-bold lg:block md:hidden sm: hidden">
           <ul className=" flex  ">
             <li className="btn-primary">{t("Home")}</li>
             <li className="btn-primary">{t("Pricing")} </li>
@@ -44,7 +42,7 @@ const Navbar = () => {
             <li className="btn-primary">Blog </li> */}
           </ul>
         </div>
-        <div className="mr-40 font-bold md:flex-row md:mr-5 sm:flex-row sm:mr-2">
+        <div className="me-40 font-bold md:flex-row md:me-5 sm:flex-row sm:me-2">
           <ul className=" flex  ">
             <li
               onMouseLeave={() => setOpen(false)}
@@ -68,11 +66,11 @@ const Navbar = () => {
                         placeholder="Enter the Shipment ID"
                         value={trackID}
                         onChange={(ev) => updateTrackID(ev.target.value)}
-                        className="border px-2 w-60 border-grayish  rounded-l-lg py-1 "
+                        className="border px-2 w-60 border-grayish  rounded-s-lg py-1 "
                       />
                       <button
                         onClick={() => searchID()}
-                        className=" bg-bosta w-14 h-14 items-center text-white rounded-r-xl"
+                        className=" bg-bosta w-14 h-14 items-center text-white rounded-e-xl"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -80,7 +78,7 @@ const Navbar = () => {
                           viewBox="0 0 24 24"
                           strokeWidth={1}
                           stroke="currentColor"
-                          className="ml-2 w-9 h-9"
+                          className="ms-2 w-9 h-9"
                         >
                           <path
                             strokeLinecap="round"

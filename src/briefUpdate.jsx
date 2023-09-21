@@ -25,15 +25,25 @@ const BriefUpdate = () => {
 
         <DetailsTable />
 
-        <div className="grid-item-data ">
-          <div className="grid-item-sup ">
-            <h1>Hello</h1>
+        <div className="grid-item-data items-center  ">
+          <div className="bg-gray-100 grid-item-sup mb-2 py-5 pe-5  text-right   h-auto ">
+            <h1>
+              كلية البنات – 198 ش النزهة – أبراج المروة - بالقرب من جوميا .
+            </h1>
 
             {/* <div className="">Row 1, Column 1</div>
             <div className="">Row 1, Column 2</div> */}
           </div>
-          <div className="grid-item-sup ">
-            <h1>Hello</h1>
+          <div className="grid-item-sup  flex flex-col justify-center ">
+            <img
+              className="object-cover h-auto"
+              src="https://img.freepik.com/free-vector/organic-flat-customer-support-illustration_23-2148899174.jpg?w=2000"
+              alt="customer service"
+            />
+            <button className=" h-[10%] w-[30%] items-center text-center p-0 btn-signup">
+              {" "}
+              Call Us
+            </button>
             {/* <div className="w-1/2">Row 2, Column 1</div>
             <div className="w-1/2">Row 2, Column 2</div> */}
           </div>

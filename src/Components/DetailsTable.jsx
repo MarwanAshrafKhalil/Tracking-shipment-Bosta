@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 
 const Details = () => {
   const user = useSelector((state) => state.user.users.TransitEvents);
-  console.log("user-table: ", user);
 
   function createData(Location, Date, Time, Details) {
     return { Location, Date, Time, Details };
