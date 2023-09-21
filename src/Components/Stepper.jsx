@@ -13,7 +13,7 @@ import CheckIcon from "@mui/icons-material/Check";
 import StepConnector, {
   stepConnectorClasses,
 } from "@mui/material/StepConnector";
-import { useEffect, useState } from "react";
+
 import i18next from "i18next";
 
 const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
@@ -111,38 +111,6 @@ ColorlibStepIcon.propTypes = {
 };
 
 export default function CustomizedSteppers({ currentStep, steps, ...props }) {
-  // maximum 3
-  // todo:
-
-  // const color = "#84cc16";
-
-  // const steps = [
-  //   "Order Created",
-  //   "Shipment received from vendor",
-  //   "Out for delivery",
-  //   "Order delivered",
-  // ];
-
-  // const phases = [
-  //   {
-  //     state: "TICKET_CREATED",
-  //     id: "0",
-  //   },
-  //   {
-  //     state: "PACKAGE_RECEIVED",
-  //     id: "1",
-  //   },
-
-  //   {
-  //     state: "OUT_FOR_DELIVERY",
-  //     id: "2",
-  //   },
-  //   {
-  //     state: "DELIVERED",
-  //     id: "3",
-  //   },
-  // ];
-
   return (
     <Stepper
       alternativeLabel

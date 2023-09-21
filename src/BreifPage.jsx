@@ -34,16 +34,13 @@ const BriefPage = () => {
             {/* <div className="">Row 1, Column 1</div>
             <div className="">Row 1, Column 2</div> */}
           </div>
-          <div className="grid-item-sup  flex flex-col justify-center ">
+          <div className="grid-item-sup h-auto  flex flex-col justify-center items-center">
             <img
-              className="object-cover h-auto"
+              className="object-cover h-auto md: max-w-sm"
               src="https://img.freepik.com/free-vector/organic-flat-customer-support-illustration_23-2148899174.jpg?w=2000"
               alt="customer service"
             />
-            <button className=" h-[10%] w-[30%] items-center text-center p-0 btn-signup">
-              {" "}
-              Call Us
-            </button>
+
             {/* <div className="w-1/2">Row 2, Column 1</div>
             <div className="w-1/2">Row 2, Column 2</div> */}
           </div>

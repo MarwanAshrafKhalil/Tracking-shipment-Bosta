@@ -13,7 +13,7 @@
   "Time": "Time",
   "Details": "Details",
   "Order Created": "Order Created",
-  "Shipment Rec": "Shipment Rec",
-  "Out Delivery": "Out Delivery",
-  "Order Del": "Order Del"
+  "Shipment Rec": "Shipment Received",
+  "Out Delivery": "Out for Delivery",
+  "Order Del": "Order Delivered"
 }
