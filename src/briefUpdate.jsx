@@ -16,9 +16,41 @@ const BriefUpdate = () => {
     if (trackID) dispatch(fetchUsers(trackID));
   }, [trackID]);
 
-  const { users } = useSelector((state) => state.user);
-  // console.log("opop: ", user);
+  const {
+    users,
+    provider,
+    CurrentStatus,
+    PromisedDate,
+    TrackingNumber,
+    TransitEvents,
+  } = useSelector((state) => state.user);
 
+  const steps = [
+    "Order Created",
+    "Shipment received from vendor",
+    "Out for delivery",
+    "Order delivered",
+  ];
+
+  const phases = [
+    {
+      state: "TICKET_CREATED",
+      id: "0",
+    },
+    {
+      state: "PACKAGE_RECEIVED",
+      id: "1",
+    },
+
+    {
+      state: "OUT_FOR_DELIVERY",
+      id: "2",
+    },
+    {
+      state: "DELIVERED",
+      id: "3",
+    },
+  ];
   function dateRefactor(x) {
     const date = new Date(x);
     const day = date.toLocaleString("en-US", { weekday: "long" });
@@ -72,34 +104,37 @@ const BriefUpdate = () => {
             <div className=" flex flex-col">
               <span className=" span-title">Shipment ID - {"13737343"}</span>
               <span className=" span-data">
-                {users.CurrentStatus && users.CurrentStatus.state.split("_")[0]}
+                {CurrentStatus?.state?.split("_")[0]}
               </span>
             </div>
             <div className=" flex flex-col">
               <span className="span-title"> Last Update</span>
               <span className=" span-data">
-                {users &&
-                  users.CurrentStatus &&
-                  users.CurrentStatus.timestamp &&
-                  lastUpdateRefactor(users.CurrentStatus.timestamp)}
+                {CurrentStatus?.timestamp &&
+                  lastUpdateRefactor(CurrentStatus.timestamp)}
               </span>
             </div>
             <div className=" flex flex-col">
               <span className="span-title">Vendor</span>
-              <span className=" span-data">{users && users.provider}</span>
+              <span className=" span-data">{provider}</span>
             </div>
             <div className=" flex flex-col">
               <span className="span-title">Delivery Date</span>
               <span className=" span-data">
-                {users &&
-                  users.PromisedDate &&
-                  getMonthFromDate(users.PromisedDate.split("T")[0])}
+                {PromisedDate && getMonthFromDate(PromisedDate.split("T")[0])}
               </span>
             </div>
           </div>
           <hr className="mb-10" />
           <div className="mb-0">
-            <CustomizedSteppers status={users?.CurrentStatus?.state} />
+            <CustomizedSteppers
+              currentStep={
+                phases.find((x) => x.state === CurrentStatus?.state)?.id
+                  ? +phases.find((x) => x.state === CurrentStatus?.state)?.id
+                  : 0
+              }
+              steps={steps}
+            />
           </div>
         </div>
         <div className="grid-item-table">

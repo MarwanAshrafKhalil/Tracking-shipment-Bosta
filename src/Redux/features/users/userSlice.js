@@ -5,8 +5,12 @@ import axios from "axios";
 const initialState = {
   loading: false,
   users: [],
+  provider: "",
+  CurrentStatus: {},
+  PromisedDate: "",
+  TrackingNumber: "",
+  TransitEvents: [],
   error: "",
-  searchingDone: false,
 };
 
 export const fetchUsers = createAsyncThunk("user/fetchUsers", (trackID) => {
@@ -28,11 +32,21 @@ const userSlice = createSlice({
       state.loading = true;
     });
     builder.addCase(fetchUsers.fulfilled, (state, action) => {
-      // const {} = action.payload
+      const {
+        provider,
+        CurrentStatus,
+        PromisedDate,
+        TrackingNumber,
+        TransitEvents,
+      } = action.payload;
       state.loading = false;
       state.users = action.payload;
+      state.provider = provider;
+      state.CurrentStatus = CurrentStatus;
+      state.PromisedDate = PromisedDate;
+      state.TrackingNumber = TrackingNumber;
+      state.TransitEvents = TransitEvents;
       state.error = "";
-      state.searchingDone = true;
     });
     builder.addCase(fetchUsers.rejected, (state, action) => {
       state.loading = false;

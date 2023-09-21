@@ -110,28 +110,47 @@ ColorlibStepIcon.propTypes = {
   icon: PropTypes.node,
 };
 
-export default function CustomizedSteppers() {
-  const 
-  const currentStatus = 2; // maximum 3
+export default function CustomizedSteppers({ currentStep, steps, ...props }) {
+  // maximum 3
   // todo:
 
   // const color = "#84cc16";
 
-  const steps = [
-    "Order Created",
-    "Shipment received from vendor",
-    "Out for delivery",
-    "Order delivered",
-  ];
+  // const steps = [
+  //   "Order Created",
+  //   "Shipment received from vendor",
+  //   "Out for delivery",
+  //   "Order delivered",
+  // ];
+
+  // const phases = [
+  //   {
+  //     state: "TICKET_CREATED",
+  //     id: "0",
+  //   },
+  //   {
+  //     state: "PACKAGE_RECEIVED",
+  //     id: "1",
+  //   },
+
+  //   {
+  //     state: "OUT_FOR_DELIVERY",
+  //     id: "2",
+  //   },
+  //   {
+  //     state: "DELIVERED",
+  //     id: "3",
+  //   },
+  // ];
 
   return (
     <Stepper
       alternativeLabel
-      activeStep={currentStatus}
+      activeStep={currentStep}
       connector={<ColorlibConnector />}
     >
-      {steps.map((label) => (
-        <Step key={label}>
+      {steps.map((label, index) => (
+        <Step key={index}>
           <StepLabel StepIconComponent={ColorlibStepIcon}>
             <div className=" mt-8 font-bold text-grayish">{label}</div>
           </StepLabel>
