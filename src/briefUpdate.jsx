@@ -1,17 +1,18 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import DetailsTable from "./Components/DetailsTable";
-import CustomizedSteppers from "./Components/Stepper";
+
 import { fetchUsers } from "./Redux/features/users/userSlice";
 import { useParams } from "react-router-dom";
 import ShipmentInfo from "./Components/ShipmentInfo";
+// import { useTranslation } from "react-i18next";
 
 const BriefUpdate = () => {
-  // console.log("user: ", user);
+  // const [t, i18n] = useTranslation();
+
   const dispatch = useDispatch();
   const { trackID } = useParams();
-  console.log(trackID);
 
   useEffect(() => {
     if (trackID) dispatch(fetchUsers(trackID));

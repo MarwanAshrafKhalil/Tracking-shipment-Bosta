@@ -1,15 +1,14 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { Link, Outlet, useNavigate } from "react-router-dom";
-import { fetchUsers } from "../Redux/features/users/userSlice";
+import { useTranslation } from "react-i18next";
+import { Link, useNavigate } from "react-router-dom";
 
 // import { UserView } from "../Redux/features/users/UserView";
 
 const Navbar = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [trackID, setTrackID] = useState("");
+  const [t, i18n] = useTranslation();
 
   function updateTrackID(ID) {
     setTrackID(ID);
@@ -38,14 +37,13 @@ const Navbar = () => {
 
         <div className="mr-40 font-bold lg:block md:hidden sm: hidden">
           <ul className=" flex  ">
-            <li className="btn-primary">Products</li>
-            <li className="btn-primary">Integrations </li>
-            <li className="btn-primary">Use Cases </li>
-            <li className="btn-primary">Pricing </li>
-            <li className="btn-primary">Blog </li>
+            <li className="btn-primary">{t("Home")}</li>
+            <li className="btn-primary">{t("Pricing")} </li>
+            <li className="btn-primary">{t("Contact Us")} </li>
+            {/* <li className="btn-primary">Pricing </li>
+            <li className="btn-primary">Blog </li> */}
           </ul>
         </div>
-
         <div className="mr-40 font-bold md:flex-row md:mr-5 sm:flex-row sm:mr-2">
           <ul className=" flex  ">
             <li
@@ -53,7 +51,7 @@ const Navbar = () => {
               onMouseEnter={() => setOpen(true)}
               className="relative p-4  text-bosta"
             >
-              Track Shipment
+              {t("Track Shipping")}
               <ul
                 className={` absolute z-10 py-2 mt-2 w-50 h-44 bg-white rounded-lg shadow-xl ${
                   open ? "block" : "hidden"
@@ -62,7 +60,7 @@ const Navbar = () => {
                 <li className="flex px-12 py-5">
                   <div className=" flex  flex-col">
                     <label className=" w-full  left-0 text-grayish font-medium text-lg">
-                      Track your shipment
+                      {t("Track Shipping")}
                     </label>
                     <div className="flex content-center mt-5">
                       <input
@@ -97,9 +95,29 @@ const Navbar = () => {
               </ul>
             </li>
 
-            <li className="btn-primary ">AR </li>
-            <li className="btn-primary">Sign In </li>
-            <li className="btn-signup">Sign Up</li>
+            <li className="btn-primary">{t("Signin")} </li>
+
+            <li className="btn-primary ">
+              {i18n.language == "en" && (
+                <button
+                  onClick={() => {
+                    i18n.changeLanguage("ar");
+                  }}
+                >
+                  AR
+                </button>
+              )}
+              {i18n.language == "ar" && (
+                <button
+                  onClick={() => {
+                    i18n.changeLanguage("en");
+                  }}
+                >
+                  EN
+                </button>
+              )}
+            </li>
+            {/* <li className="btn-signup">Sign Up</li> */}
           </ul>
         </div>
       </div>
