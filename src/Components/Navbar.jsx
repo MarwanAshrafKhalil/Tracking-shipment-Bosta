@@ -36,7 +36,7 @@ const Navbar = () => {
           />
         </Link>
 
-        <div className="mr-40 font-bold">
+        <div className="mr-40 font-bold lg:block md:hidden sm: hidden">
           <ul className=" flex  ">
             <li className="btn-primary">Products</li>
             <li className="btn-primary">Integrations </li>
@@ -46,7 +46,7 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <div className="mr-40 font-bold">
+        <div className="mr-40 font-bold md:flex-row md:mr-5 sm:flex-row sm:mr-2">
           <ul className=" flex  ">
             <li
               onMouseLeave={() => setOpen(false)}
@@ -97,7 +97,7 @@ const Navbar = () => {
               </ul>
             </li>
 
-            <li className="btn-primary">AR </li>
+            <li className="btn-primary ">AR </li>
             <li className="btn-primary">Sign In </li>
             <li className="btn-signup">Sign Up</li>
           </ul>
