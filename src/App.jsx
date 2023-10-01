@@ -4,6 +4,7 @@ import Homepage from "./Homepage";
 import i18next from "i18next";
 import { useEffect, useState } from "react";
 import BriefPage from "./BreifPage";
+import NavbarUpdate from "./Components/NavbarUpdate";
 
 function App() {
   const [currentLanguage, setCurrentLanguage] = useState(i18next.language);
@@ -22,7 +23,7 @@ function App() {
   return (
     <div dir={currentLanguage == "ar" ? "rtl" : "ltr"}>
       <BrowserRouter>
-        <Navbar />
+        <NavbarUpdate />
 
         <Routes>
           <Route path="/" element={<Homepage />}></Route>

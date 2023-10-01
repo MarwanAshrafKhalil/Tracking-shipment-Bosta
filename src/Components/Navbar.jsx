@@ -27,7 +27,10 @@ const Navbar = () => {
       <div className=" flex justify-between top-0 items-center pt-10 pe-70 pb-16 ps-70 ">
         <Link to="/">
           <img
-            className="object-contain h-10 ms-20"
+            className="object-contain h-10 ms-20
+            
+            
+            "
             src="https://lever-client-logos.s3.us-west-2.amazonaws.com/4a536633-277c-4c83-afa7-586bfcce7dd0-1636574104926.png"
             alt=""
           />
