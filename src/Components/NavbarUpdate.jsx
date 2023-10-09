@@ -42,7 +42,7 @@ export default function NavbarUpdate() {
     <Disclosure as="nav" className="bg-white">
       {({ open }) => (
         <>
-          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <div className="mx-auto  px-2 sm:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
@@ -56,7 +56,7 @@ export default function NavbarUpdate() {
                   )}
                 </Disclosure.Button>
               </div>
-              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+              <div className="flex flex-1 gap-10 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
                   <img
                     className="h-8 w-auto"
@@ -65,8 +65,8 @@ export default function NavbarUpdate() {
                   />
                 </div>
 
-                <div className="hidden me-10 sm:ml-6 sm:block">
-                  <div className="flex space-x-4 ">
+                <div className="hidden flex  me-10  gap-12 sm:ml-6 sm:flex ">
+                  <div className="hidden  md:flex space-x-4 ">
                     {navigation.map((item) => (
                       <a
                         key={item.name}
@@ -83,8 +83,7 @@ export default function NavbarUpdate() {
                       </a>
                     ))}
                   </div>
-                </div>
-                <div className="flex space-x-4">
+                  <div className=" flex space-x-4">
                   {navigation2.map((item) => (
                     <ul
                       key={item.name}
@@ -125,9 +124,9 @@ export default function NavbarUpdate() {
                               leaveFrom="transform opacity-100 scale-100"
                               leaveTo="transform opacity-0 scale-95"
                             >
-                              <Menu.Items className="absolute  right-0 z-10 mt-2   py-2 w-50 h-44   rounded-lg shadow-xl origin-top-right  bg-white  ring-1 ring-black ring-opacity-5 focus:outline-none">
+                              <Menu.Items className="absolute  left-0 md:right-0 z-10 mt-2 py-2 w-50 h-44 rounded-lg shadow-xl bg-white border border-1">
                                 <div className=" flex  flex-col m-4">
-                                  <label className=" w-full left-0 text-grayish font-medium text-lg">
+                                  <label className=" w-full left-0  text-grayish font-medium text-lg">
                                     {t("Track Shipping")}
                                   </label>
                                   <div className="flex content-center mt-5 ">
@@ -182,7 +181,9 @@ export default function NavbarUpdate() {
                     // </a>
                   ))}
                 </div>
+                </div>
               </div>
+              
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <button
                   type="button"
@@ -263,7 +264,7 @@ export default function NavbarUpdate() {
 
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2">
-              {navigation.map((item) => (
+              {navigation2.map((item) => (
                 <Disclosure.Button
                   key={item.name}
                   as="a"
