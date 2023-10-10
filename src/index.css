@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 .btn-primary {
-  @apply p-4 me-11 text-grayish font-bold hover:text-bosta hover:underline;
+  @apply  text-grayish font-bold hover:text-bosta hover:underline;
 }
 
 .btn-signup {
